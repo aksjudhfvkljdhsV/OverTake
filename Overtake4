@@ -172,9 +172,8 @@ local speedWarning = 0
 
         local colorDark = rgbm(0.4, 0.4, 0.4, 1)
         local colorGrey = rgbm(0.7, 0.7, 0.7, 1)
-        local colorAccent = rgbm.new(hsv(speedRelative * 120, 1, 1):rgb(), 1)
-        local colorCombo =
-            rgbm.new(hsv(comboColor, math.saturate(comboMeter / 10), 1):rgb(), math.saturate(comboMeter / 4))
+        local colorAccent = rgbm(1.0, 0.0, 0.0, 1)
+        local colorCombo = rgbm(1.0, 0.0, 0.0, 1)
         local function speedMeter(ref)
             ui.drawRectFilled(ref + vec2(0, -4), ref + vec2(180, 5), colorDark, 1)
             ui.drawLine(ref + vec2(0, -4), ref + vec2(0, 4), colorGrey, 1)
@@ -190,7 +189,7 @@ local speedWarning = 0
 
         ui.pushStyleVar(ui.StyleVar.Alpha, 1 - speedWarning)
         ui.pushFont(ui.Font.Main)
-        ui.textColored("Zuka's Server", colorCombo)
+        ui.textColored(" ", colorCombo)
         ui.textColored("Highest Score: " .. highestScore .. " pts", colorCombo)
         ui.popFont()
         ui.pushFont(ui.Font.Title)
