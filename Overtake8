@@ -19,10 +19,8 @@ local stored = { }
 
 stored.playerscore = ac.storage('playerscore', highestScore) --default value
 highestScore = stored.playerscore:get()
-ac.sendChatMessage("has a highscore of " .. highestScore .. " pts.")
 
 local function sendhighscore(connectedCarIndex, connectedSessionID)
-    ac.sendChatMessage("has a highscore of " .. highestScore .. " pts.")
 end
 
 ac.onClientConnected(sendhighscore)
@@ -34,7 +32,6 @@ function script.update(dt)
         if totalScore > highestScore then
             highestScore = math.floor(totalScore)
             stored.playerscore:set(highestScore)
-            ac.sendChatMessage("has a NEW highscore of " .. totalScore .. " pts.")
         end
         totalScore = 0
         comboMeter = 1
@@ -62,7 +59,6 @@ function script.update(dt)
         if totalScore > highestScore then
             highestScore = math.floor(totalScore)
             stored.playerscore:set(highestScore)
-            ac.sendChatMessage("has a NEW highscore of " .. totalScore .. " pts.")
         end
             totalScore = 0
             comboMeter = 1
@@ -97,7 +93,6 @@ function script.update(dt)
         		if totalScore > highestScore then
             		highestScore = math.floor(totalScore)
             		stored.playerscore:set(highestScore)
-            ac.sendChatMessage("has a NEW highscore of " .. totalScore .. " pts.")
         		end
                 totalScore = 0
                 comboMeter = 1
