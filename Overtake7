@@ -172,8 +172,8 @@ local speedWarning = 0
 
         local colorDark = rgbm(0.4, 0.4, 0.4, 1)
         local colorGrey = rgbm(0.7, 0.7, 0.7, 1)
-        local colorAccent = rgbm(1.0, 1.0, 1.0, 1)
-        local colorCombo = rgbm(1.0, 1.0, 1.0, 1)
+        local colorAccent = rgbm(1.0, 0.0, 0.0, 1)
+        local colorCombo = rgbm(1.0, 0.0, 0.0, 1)
         local function speedMeter(ref)
             ui.drawRectFilled(ref + vec2(0, -4), ref + vec2(180, 5), colorDark, 1)
             ui.drawLine(ref + vec2(0, -4), ref + vec2(0, 4), colorGrey, 1)
